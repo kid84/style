@@ -10,6 +10,7 @@ class App < Sinatra::Base
     	Compass.configuration do |config|
       		config.project_path = File.dirname(__FILE__)
       		config.sass_dir = 'views'
+            config.images_dir = 'views/images'#スプライト画像用
     	end
     	set :haml, { format: :html5 }
     	set :sass, Compass.sass_engine_options

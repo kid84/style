@@ -355,3 +355,29 @@ $cobalt:#34495E;
 .btn2{
 	@include btn-flat;
 }
+
+
+
+//スプライト画像
+$sprites: sprite-map("sprites/*.png");
+$sprites-img:sprite-url($sprites);
+@mixin sprite-background($name) {
+     background-image: $sprites-img;
+     background-repeat: no-repeat;
+     display: block;
+     height: image-height(sprite-file($sprites, $name)) / 2;
+     width: image-width(sprite-file($sprites, $name)) / 2;
+     $ypos: round(nth(sprite-position($sprites, $name), 2) / 2);
+     background-position: 0 $ypos;
+     @include background-size(100px auto);
+}
+@mixin sprite-module($w:10px,$h:10px){
+    &:before{
+        @include sprite-background(instagram);
+        content: '';
+        display: block;
+        width: $w;
+        height: $h;
+        float: left;
+    }
+}
