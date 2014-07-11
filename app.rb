@@ -28,13 +28,4 @@ class App < Sinatra::Base
 		# scss:'scss/style',:style => :compressed,:line_comments => false,:cache=>false
 		scss:'scss/style',:style => :expanded,:line_comments => false,:cache=>false
 	end
-
-	# test
-	get '/test' do
-		erb:'test/index'
-	end
-	get '/test/style.css' do
-		# scss:'scss/style',:style => :compressed,:line_comments => false,:cache=>false
-		scss:'test/style',:style => :expanded,:line_comments => false,:cache=>false
-	end
 end

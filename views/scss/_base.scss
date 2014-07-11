@@ -1,0 +1,16 @@
+body {
+    color: $base-color;
+    font-size: $base-font-size;
+    font-family: #{$base-font-family};
+    line-height: $base-line-height;
+}
+a {
+    color: $base-link-color;
+    @include link-decoration(none-to-underline);
+}
+img {
+    vertical-align: top;
+}
+label {
+    cursor: pointer;
+}
